@@ -10,7 +10,8 @@ on:
     
  # Dejamos esta línea para probar manualmente sin estar haciendo push todo el tiempo
   workflow_dispatch:
-  
+
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -28,13 +29,15 @@ jobs:
         uses: rundocs/checkout@master
       - name: Revisar direccion PWD
         run: pwd
-        
+                
       - name: Create/Modify deployment
         uses: gane5hvarma/kubectl-actions@master
+                  
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+  
         with:
-          args: apply -f ./home/runner/work/challenge/challenge/web.yaml
+          args: apply -f deployment.yaml
         
         
         
