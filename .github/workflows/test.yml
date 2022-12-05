@@ -32,7 +32,7 @@ jobs:
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
-          args: apply -f ./bar/foo/web.yaml
+          args: apply -f ./web.yaml
         
         
         
