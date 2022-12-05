@@ -27,5 +27,12 @@ jobs:
       - name: Check HTML
         uses: rundocs/checkout@master
         
+      - name: Create/Modify deployment
+        uses: gane5hvarma/kubectl-actions@master
+        env:
+          KUBE_CONFIG_DATA: cat $HOME/.kube/config | base64
+        with:
+          args: apply -f web.yml
+        
         
         
