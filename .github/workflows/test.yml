@@ -25,7 +25,9 @@ jobs:
           npx remark . --use remark-preset-lint-consistent --frail
  
       - name: Check HTML
-        uses: rundocs/checkout@master
+        uses: rundocs/checkout@master}
+      - name: Revisar direccion PWD
+        run: pwd
         
       - name: Create/Modify deployment
         uses: gane5hvarma/kubectl-actions@master
